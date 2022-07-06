@@ -24,8 +24,6 @@ def plt_show(args, img, ori, epoch):
     plots[0].set_title("recons")
     plots[1].set_title("original")
 
-    plt.savefig(f"result/train_image/{args.obj}_{args.model}_{epoch}_img.jpg")
-
 
 def denormalization(x, mean, std):
     x = (((x.transpose(1, 2, 0) * std) + mean) * 255.0).astype(np.uint8)
