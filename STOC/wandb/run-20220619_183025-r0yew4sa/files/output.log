@@ -1,0 +1,19 @@
+
+training...
+[34m[1mwandb[39m[22m: [33mWARNING[39m Calling run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
+Traceback (most recent call last):
+  File "main.py", line 35, in <module>
+    main(args)
+  File "main.py", line 21, in main
+    best_result, version = trainer.fit()
+  File "/repo/Time-Series-AD/STOC/trainer.py", line 99, in fit
+    model, optimizer, scheduler, criterion = self.init_model()
+  File "/repo/Time-Series-AD/STOC/trainer.py", line 170, in init_model
+    model = module.Model(self.args).to(self.device)
+  File "/repo/Time-Series-AD/STOC/models/STOC.py", line 63, in __init__
+    self.ffn = FeedForward(self.feature_size, 1)
+  File "/repo/Time-Series-AD/STOC/models/STOC.py", line 127, in __init__
+    init.xavier_uniform_(self.net.weight)
+  File "/home/jina/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1131, in __getattr__
+    type(self).__name__, name))
+AttributeError: 'Sequential' object has no attribute 'weight'

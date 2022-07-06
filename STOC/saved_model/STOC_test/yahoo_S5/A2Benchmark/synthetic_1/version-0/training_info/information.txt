@@ -1,0 +1,116 @@
+[Model architecture] 
+ Model(
+  (pos_encoder): PositionalEncoding()
+  (encoder_layer1): TransformerEncoderLayer(
+    (self_attn): MultiheadAttention(
+      (out_proj): _LinearWithBias(in_features=256, out_features=256, bias=True)
+    )
+    (linear1): Linear(in_features=256, out_features=2048, bias=True)
+    (dropout): Dropout(p=0.1, inplace=False)
+    (linear2): Linear(in_features=2048, out_features=256, bias=True)
+    (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    (dropout1): Dropout(p=0.1, inplace=False)
+    (dropout2): Dropout(p=0.1, inplace=False)
+  )
+  (transformer_encoder1): TransformerEncoder(
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): _LinearWithBias(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=2048, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (linear2): Linear(in_features=2048, out_features=256, bias=True)
+        (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (dropout2): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (encoder_layer2): TransformerEncoderLayer(
+    (self_attn): MultiheadAttention(
+      (out_proj): _LinearWithBias(in_features=256, out_features=256, bias=True)
+    )
+    (linear1): Linear(in_features=256, out_features=2048, bias=True)
+    (dropout): Dropout(p=0.1, inplace=False)
+    (linear2): Linear(in_features=2048, out_features=256, bias=True)
+    (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    (dropout1): Dropout(p=0.1, inplace=False)
+    (dropout2): Dropout(p=0.1, inplace=False)
+  )
+  (transformer_encoder2): TransformerEncoder(
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): _LinearWithBias(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=2048, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (linear2): Linear(in_features=2048, out_features=256, bias=True)
+        (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (dropout2): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (encoder_layer3): TransformerEncoderLayer(
+    (self_attn): MultiheadAttention(
+      (out_proj): _LinearWithBias(in_features=256, out_features=256, bias=True)
+    )
+    (linear1): Linear(in_features=256, out_features=2048, bias=True)
+    (dropout): Dropout(p=0.1, inplace=False)
+    (linear2): Linear(in_features=2048, out_features=256, bias=True)
+    (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    (dropout1): Dropout(p=0.1, inplace=False)
+    (dropout2): Dropout(p=0.1, inplace=False)
+  )
+  (transformer_encoder3): TransformerEncoder(
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): _LinearWithBias(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=2048, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (linear2): Linear(in_features=2048, out_features=256, bias=True)
+        (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (dropout2): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (conv_layer): Conv1d(768, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+  (relu): ReLU()
+  (ffn): FeedForward(
+    (net): Sequential(
+      (0): Linear(in_features=256, out_features=1024, bias=True)
+      (1): Swish()
+      (2): Dropout(p=0.0, inplace=False)
+      (3): Linear(in_features=1024, out_features=256, bias=True)
+      (4): Dropout(p=0.0, inplace=False)
+    )
+  )
+  (out_proj): Linear(
+    (linear): Linear(in_features=256, out_features=1, bias=False)
+  )
+)
+[Optimizer] 
+ AdamW (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    initial_lr: 0
+    lr: 0
+    weight_decay: 0.01
+)
+[Scheduler] 
+ <torch.optim.lr_scheduler.CosineAnnealingLR object at 0x7fc299e79da0>
+[Criterion] 
+ MSELoss()
