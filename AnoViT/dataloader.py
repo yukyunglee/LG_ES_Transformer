@@ -3,8 +3,8 @@ from torchvision import transforms as T
 from PIL import Image
 import numpy as np
 
-from dataset import MVTecDataset
-from mean_std import obj_stats_384
+from .dataset import MVTecDataset
+from .mean_std import obj_stats_384
 
 
 def get_dataloader(args):
