@@ -11,7 +11,7 @@ import torch.backends.cudnn as cudnn
 import torch.nn as nn
 from sklearn.metrics import roc_auc_score, precision_recall_curve
 
-from dataloader import make_matplt
+from .dataloader import make_matplt
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"
